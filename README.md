@@ -21,4 +21,4 @@ Usage:
 </script>
 ```
 
-[wsjs Standalone](https://github.com/pharesim/wsjs)
+uses [wsjs](https://github.com/pharesim/wsjs)
