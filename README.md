@@ -20,3 +20,5 @@ Usage:
  });
 </script>
 ```
+
+[wsjs Standalone](https://github.com/pharesim/wsjs)
