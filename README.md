@@ -5,7 +5,7 @@ No further dependencies
 
 Usage:
 
-´´´
+```
 ws = new WebSocketWrapper(server);
 ws.connect().then(function(response) {
   steem = new SteemWrapper(ws);
@@ -13,4 +13,4 @@ ws.connect().then(function(response) {
     // do stuff
   });
 });
-´´´
+```
