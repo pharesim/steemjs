@@ -14,14 +14,14 @@ WebSocketWrapper = (function() {
         this.connection = new WebSocket(this.server);
         this.connection.onopen = () => {
           resolve(this.connection);
-        }
+        };
         this.connection.onerror = function(error) {
           reject(Error('Error connecting to server, please reload the page!'+error));
-        }
+        };
         this.connection.onmessage = (data) => {
-          var data = JSON.parse(data['data']);
-          this.callbacks[data['id']](data['result']);
-        }
+          var sdata = JSON.parse(data['data']);
+          this.callbacks[sdata['id']](sdata['result']);
+        };
       } else {
         reject(Error('Your browser is too old, please get a recent one!'));
       }
