@@ -6,8 +6,7 @@ No further dependencies
 Usage:
 
 ```
-<script type="text/javascript" src="js/ws.js"></script>
-<script type="text/javascript" src="js/steem.js"></script>
+<script type="text/javascript" src="js/steem.min.js"></script>
 
 <script type="text/javascript">
  var server = 'wss://steemit.com/ws';
