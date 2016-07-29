@@ -9,18 +9,20 @@ WebSocketWrapper = (function() {
   }
 
   ws.connect = function() {
-    return new Promise((resolve, reject) => {
+    var that = this;
+    
+    return new Promise(function(resolve, reject) {
       if('WebSocket' in window) {
-        this.connection = new WebSocket(this.server);
-        this.connection.onopen = () => {
-          resolve(this.connection);
+        that.connection = new WebSocket(that.server);
+        that.connection.onopen = function() {
+          resolve(that.connection);
         };
-        this.connection.onerror = function(error) {
+        that.connection.onerror = function(error) {
           reject(Error('Error connecting to server, please reload the page!'+error));
         };
-        this.connection.onmessage = (data) => {
+        that.connection.onmessage = function(data) {
           var sdata = JSON.parse(data['data']);
-          this.callbacks[sdata['id']](sdata['result']);
+          that.callbacks[sdata['id']](sdata['result']);
         };
       } else {
         reject(Error('Your browser is too old, please get a recent one!'));
